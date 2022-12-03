@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.Utilities;
 
 public class Player : MonoBehaviour
@@ -89,9 +90,15 @@ public class Player : MonoBehaviour
 
         if (context.performed && isGrounded == true)
         {
+            Debug.Log("Jump Performed");
+            Debug.Log(context.interaction);
             isGrounded = false;
             ChangeState(context);
-            rb.AddForce(Vector2.up * jumpForce);
+            
+            if (context.interaction is TapInteraction)
+                rb.AddForce(Vector2.up * jumpForce);
+            else if (context.interaction is HoldInteraction)
+                rb.AddForce(Vector2.up * jumpForce * 1.5f);
 
             foreach (PiggyAIController piggy in piggies)
             {

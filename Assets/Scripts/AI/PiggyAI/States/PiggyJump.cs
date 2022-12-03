@@ -11,7 +11,7 @@ public class PiggyJump : PiggyState
 
     public override void enter()
     {
-        Debug.Log("Entered Jump State");
+        //Debug.Log("Entered Jump State");
         piggyController.anim.SetTrigger("isJumping");
         piggyController.sound.PlayOneShot(AudioLibrary.library[piggyController.oinkName]);
 
@@ -30,7 +30,7 @@ public class PiggyJump : PiggyState
 
     public override void exit()
     {
-        Debug.Log("Exited Jump State");
+        //Debug.Log("Exited Jump State");
         piggyController.anim.ResetTrigger("isJumping");
     }
 }

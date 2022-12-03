@@ -60,7 +60,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""id"": ""3943b342-1b49-43c0-b075-81fe9cdf1304"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap(pressPoint=0.1),Hold(duration=0.2,pressPoint=0.1)"",
                     ""initialStateCheck"": false
                 }
             ],

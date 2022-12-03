@@ -63,7 +63,7 @@ public class SquareMatrix
         for (int i = 0; i < n; i++)
         {
             product += currentMatrix[row, i] * currentMatrix[i, col];
-            Debug.Log(product);
+            //Debug.Log(product);
         }
         return product;
     }

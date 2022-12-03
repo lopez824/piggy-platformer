@@ -8862,20 +8862,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8491672384070720107, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
-      propertyPath: jumpForce
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: -8491672384070720107, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
       propertyPath: movementForce
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -8491672384070720107, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
-      propertyPath: rotationSpeed
-      value: 720
-      objectReference: {fileID: 0}
-    - target: {fileID: -8491672384070720107, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
-      propertyPath: rotationSpeed.y
-      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 4969970350435245134, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
       propertyPath: m_Enabled
