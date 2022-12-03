@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private GameObject[] piggyList;
     private List<PiggyAIController> piggies;
+    private ParticleSystem flameBreath;
     private Vector2 playerInput = Vector2.zero;
     private Vector3 velocity = Vector3.zero;
     private Vector3 desiredVelocity = Vector3.zero;
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
         playerActions = new PlayerInputActions();
         piggies = new List<PiggyAIController>();
         rb = GetComponent<Rigidbody>();
+        flameBreath = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnEnable()
@@ -63,7 +65,15 @@ public class Player : MonoBehaviour
     public void Attack(InputAction.CallbackContext context)
     {
         if (context.performed)
+        {
+            flameBreath.Play();
             ChangeState(context);
+        }
+
+        if (context.canceled)
+        {
+            flameBreath.Stop();
+        }
     }
 
     public void Move(InputAction.CallbackContext context)

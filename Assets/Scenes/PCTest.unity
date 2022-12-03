@@ -8862,10 +8862,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8491672384070720107, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
-      propertyPath: flyForce
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8491672384070720107, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
       propertyPath: movementForce
       value: 100
       objectReference: {fileID: 0}
