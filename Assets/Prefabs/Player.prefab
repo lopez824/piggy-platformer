@@ -176,10 +176,12 @@ MonoBehaviour:
   rigidBody: {fileID: 4020628271386781312}
   sound: {fileID: -1055174215985102771}
   jumpForce: 250
+  flyForce: 1
   movementSpeed: 5
   movementAccel: 10
   rotationSpeed: 720
   isGrounded: 1
+  isFlying: 0
 --- !u!65 &521398003249999810
 BoxCollider:
   m_ObjectHideFlags: 0

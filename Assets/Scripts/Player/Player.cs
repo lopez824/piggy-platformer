@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -21,11 +22,13 @@ public class Player : MonoBehaviour
     public Player player;
     public Rigidbody rigidBody;
     public AudioSource sound;
-    public float jumpForce = 0f;
+    public float jumpForce = 250f;
+    public float flyForce = 3f;
     public float movementSpeed = 5f;
     public float movementAccel = 10f;
-    public float rotationSpeed = 480f;
+    public float rotationSpeed = 720f;
     public bool isGrounded = true;
+    public bool isGliding = false;
 
     private void Awake()
     {
@@ -98,7 +101,11 @@ public class Player : MonoBehaviour
             if (context.interaction is TapInteraction)
                 rb.AddForce(Vector2.up * jumpForce);
             else if (context.interaction is HoldInteraction)
+            {
                 rb.AddForce(Vector2.up * jumpForce * 1.5f);
+                isGliding = true;
+            }
+                
 
             foreach (PiggyAIController piggy in piggies)
             {
@@ -106,10 +113,11 @@ public class Player : MonoBehaviour
                 piggy.ChangeState(context.action.name);
                 piggy.rb.AddForce(Vector2.up * jumpForce * 0.8f);
             }
-        }
-            
-        if (context.canceled)
+        }   
+        else if (context.canceled)
         {
+            Debug.Log("Jump Canceled");
+            isGliding = false;
             ChangeState(context);
         }
     }
@@ -179,5 +187,8 @@ public class Player : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(desiredVelocity);
         targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
         rb.MoveRotation(targetRotation);
+
+        if (isGliding == true)
+            rb.AddForce(Vector2.up * flyForce);
     }
 }
