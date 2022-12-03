@@ -175,10 +175,10 @@ MonoBehaviour:
   player: {fileID: -8491672384070720107}
   rigidBody: {fileID: 4020628271386781312}
   sound: {fileID: -1055174215985102771}
-  jumpForce: 10
+  jumpForce: 250
   movementSpeed: 5
   movementAccel: 10
-  rotationSpeed: 5
+  rotationSpeed: 720
   isGrounded: 1
 --- !u!65 &521398003249999810
 BoxCollider:

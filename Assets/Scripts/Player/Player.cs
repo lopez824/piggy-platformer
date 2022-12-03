@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
     {
         if (acquiredJump == false) return;
 
-        if (context.performed)
+        if (context.performed && isGrounded == true)
         {
             isGrounded = false;
             ChangeState(context);
