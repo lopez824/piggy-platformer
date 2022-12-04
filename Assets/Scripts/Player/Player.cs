@@ -19,7 +19,9 @@ public class Player : MonoBehaviour
     private Vector2 playerInput = Vector2.zero;
     private Vector3 velocity = Vector3.zero;
     private Vector3 desiredVelocity = Vector3.zero;
-    private bool acquiredJump = false;
+    private bool acquiredHighJump = false;
+    private bool acquiredFire = false;
+    private bool acquiredGlide = false;
 
     public Animator anim;
     public Player player;
@@ -59,24 +61,37 @@ public class Player : MonoBehaviour
         currentState.enter();
     }
 
-    public void AcquireJumpAbility()
+    public void AcquireHighJumpAbility()
     {
-        acquiredJump = true;
+        acquiredHighJump = true;
+    }
+
+    public void AcquireFireAbility()
+    {
+        acquiredFire = true;
+    }
+
+    public void AcquireGlideAbility()
+    {
+        acquiredGlide = true;
     }
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (acquiredFire == true)
         {
-            breathHitbox.enabled = true;
-            flameBreath.Play();
-            ChangeState(context);
-        }
+            if (context.performed)
+            {
+                breathHitbox.enabled = true;
+                flameBreath.Play();
+                ChangeState(context);
+            }
 
-        if (context.canceled)
-        {
-            breathHitbox.enabled = false;
-            flameBreath.Stop();
+            if (context.canceled)
+            {
+                breathHitbox.enabled = false;
+                flameBreath.Stop();
+            }
         }
     }
 
@@ -103,8 +118,6 @@ public class Player : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (acquiredJump == false) return;
-
         if (context.performed && isGrounded == true)
         {
             Debug.Log("Jump Performed");
@@ -112,12 +125,14 @@ public class Player : MonoBehaviour
             isGrounded = false;
             ChangeState(context);
             
-            if (context.interaction is TapInteraction)
+            if (context.interaction is TapInteraction || acquiredHighJump == false)
                 rb.AddForce(Vector2.up * jumpForce);
-            else if (context.interaction is HoldInteraction)
+            else if (context.interaction is HoldInteraction && acquiredHighJump == true)
             {
                 rb.AddForce(Vector2.up * jumpForce * 1.5f);
-                isGliding = true;
+                
+                if (acquiredGlide == true)
+                    isGliding = true;
             }
                 
 

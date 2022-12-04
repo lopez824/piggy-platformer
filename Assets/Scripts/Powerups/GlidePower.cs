@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpPower : PiggyPower
+public class GlidePower : PiggyPower
 {
     public override void activate()
     {
-        EnablePlayerHighJump();
+        EnablePlayerGlide();
     }
 
     private void OnTriggerEnter(Collider other)
