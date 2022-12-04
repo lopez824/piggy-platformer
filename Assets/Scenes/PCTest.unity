@@ -8865,6 +8865,14 @@ PrefabInstance:
       propertyPath: movementForce
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4655280423887080905, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655280423887080905, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4969970350435245134, guid: eb6b2d42539ff8c49ae2b67151c3a3f1, type: 3}
       propertyPath: m_Enabled
       value: 1

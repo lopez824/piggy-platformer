@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7596295475589576716}
+  - component: {fileID: 4655280423887080905}
   - component: {fileID: 6126440020014725944}
   - component: {fileID: 1791500832985061259}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FlameBreath
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,8 +32,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8912149177043318033}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &4655280423887080905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235959756408185188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 1.5}
+  m_Center: {x: 0, y: 0.1, z: 1.25}
 --- !u!198 &6126440020014725944
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4845,8 +4859,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2380538733791362114}
   - {fileID: 7596295475589576716}
+  - {fileID: 2380538733791362114}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4984,6 +4998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac74e205c57e4e46a61abfa660c17fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breathHitbox: {fileID: 4655280423887080905}
   anim: {fileID: 2883073729964587215}
   player: {fileID: -8491672384070720107}
   rigidBody: {fileID: 4020628271386781312}
@@ -5129,7 +5144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 739e9a9b17d84984eb8e8e32f0f03506, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 739e9a9b17d84984eb8e8e32f0f03506, type: 3}
       propertyPath: m_LocalPosition.x

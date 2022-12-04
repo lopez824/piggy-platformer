@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private GameObject[] piggyList;
     private List<PiggyAIController> piggies;
     private ParticleSystem flameBreath;
+    [SerializeField]
+    private BoxCollider breathHitbox;
     private Vector2 playerInput = Vector2.zero;
     private Vector3 velocity = Vector3.zero;
     private Vector3 desiredVelocity = Vector3.zero;
@@ -66,12 +68,14 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
+            breathHitbox.enabled = true;
             flameBreath.Play();
             ChangeState(context);
         }
 
         if (context.canceled)
         {
+            breathHitbox.enabled = false;
             flameBreath.Stop();
         }
     }
