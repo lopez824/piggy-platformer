@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Piggy
   - Damage
+  - OnFire
   layers:
   - Default
   - TransparentFX

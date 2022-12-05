@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public delegate void OnGameStateChanged();
     public static OnGameStateChanged updateGameState;
-
+    public static int destructionCount = 0;
 
     private void Start()
     {
