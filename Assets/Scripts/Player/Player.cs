@@ -124,8 +124,8 @@ public class Player : MonoBehaviour
     {
         if (context.performed && isGrounded == true)
         {
-            Debug.Log("Jump Performed");
-            Debug.Log(context.interaction);
+            //Debug.Log("Jump Performed");
+            //Debug.Log(context.interaction);
             isGrounded = false;
             ChangeState(context);
             
@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
         }   
         else if (context.canceled)
         {
-            Debug.Log("Jump Canceled");
+            //Debug.Log("Jump Canceled");
             isGliding = false;
             ChangeState(context);
         }
