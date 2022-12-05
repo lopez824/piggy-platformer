@@ -78,20 +78,24 @@ public class Player : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (acquiredFire == true)
+        if (context.performed)
         {
-            if (context.performed)
+            if (context.interaction is HoldInteraction && acquiredFire == true)
             {
                 breathHitbox.enabled = true;
                 flameBreath.Play();
                 ChangeState(context);
             }
-
-            if (context.canceled)
+            else if (context.interaction is TapInteraction)
             {
-                breathHitbox.enabled = false;
-                flameBreath.Stop();
+                ChangeState(context);
             }
+        }
+
+        if (context.canceled && acquiredFire == true)
+        {
+            breathHitbox.enabled = false;
+            flameBreath.Stop();
         }
     }
 
