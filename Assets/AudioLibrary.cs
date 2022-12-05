@@ -13,7 +13,8 @@ public class AudioLibrary : MonoBehaviour
     {
         foreach (AudioClip clip in audioClips)
         {
-            library.Add(clip.name, clip);
+            if (!library.ContainsKey(clip.name))
+                library.Add(clip.name, clip);
             //Debug.Log(clip.name);
         }
             

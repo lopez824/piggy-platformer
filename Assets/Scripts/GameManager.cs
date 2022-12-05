@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,11 +27,17 @@ public class GameManager : MonoBehaviour
 
     public static void RestartGame()
     {
-        Debug.Log("Lose!");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public static void GameWon()
     {
         Debug.Log("Win!");
+    }
+
+    public static void LoadNextLevel()
+    {
+        // TODO: Design Next level!
     }
 }
