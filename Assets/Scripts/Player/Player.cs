@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private GameObject[] piggyList;
     private List<PiggyAIController> piggies;
-    private ParticleSystem flameBreath;
+    public ParticleSystem flameBreath;
     [SerializeField]
     private BoxCollider breathHitbox;
     private Vector2 playerInput = Vector2.zero;
