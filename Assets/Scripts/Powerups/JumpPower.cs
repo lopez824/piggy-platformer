@@ -8,6 +8,7 @@ public class JumpPower : PiggyPower
     {
         EnablePlayerHighJump();
         piggy.isFound = true;
+        GameManager.PlayMainTheme();
     }
 
     private void OnTriggerEnter(Collider other)

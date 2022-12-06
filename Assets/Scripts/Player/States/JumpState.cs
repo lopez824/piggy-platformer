@@ -14,7 +14,7 @@ public class JumpState : PlayerState
     {
         //Debug.Log("Enter Jump");
         player.anim.SetTrigger("isJumping");
-        player.sound.PlayOneShot(AudioLibrary.library["oink_3"]);
+        player.sound.PlayOneShot(AudioLibrary.library["squeal_1"]);
     }
 
     public override PlayerState handleInput(InputAction.CallbackContext context)

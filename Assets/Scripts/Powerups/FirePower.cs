@@ -8,6 +8,7 @@ public class FirePower : PiggyPower
     {
         EnablePlayerFire();
         piggy.isFound = true;
+        GameManager.PlaySadTheme();
     }
 
     private void OnTriggerEnter(Collider other)

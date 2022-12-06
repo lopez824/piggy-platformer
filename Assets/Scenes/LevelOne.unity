@@ -4376,7 +4376,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 450217169293798622, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
       propertyPath: oinkName
-      value: oink_1
+      value: oink_3
       objectReference: {fileID: 0}
     - target: {fileID: 450217169293798622, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
       propertyPath: m_Enabled
@@ -5704,9 +5704,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2625422649771980072, guid: 6f124ec13278c04438f86595cc57916a, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625422649771980072, guid: 6f124ec13278c04438f86595cc57916a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2625422649771980072, guid: 6f124ec13278c04438f86595cc57916a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a20aa813d7fef24681491fc0a67e582, type: 3}
     - target: {fileID: 2625422649771980072, guid: 6f124ec13278c04438f86595cc57916a, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
@@ -10607,6 +10615,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioLibrary
       objectReference: {fileID: 0}
+    - target: {fileID: 4439012304944828242, guid: 07fcfdec6b1831549bb47ba12175aef7, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439012304944828242, guid: 07fcfdec6b1831549bb47ba12175aef7, type: 3}
+      propertyPath: audioClips.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: f7075997aa16f9b4ba49d17a1d22225c, type: 3}
+    - target: {fileID: 4439012304944828242, guid: 07fcfdec6b1831549bb47ba12175aef7, type: 3}
+      propertyPath: audioClips.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a20aa813d7fef24681491fc0a67e582, type: 3}
     - target: {fileID: 4439012304944828243, guid: 07fcfdec6b1831549bb47ba12175aef7, type: 3}
       propertyPath: m_RootOrder
       value: 5
