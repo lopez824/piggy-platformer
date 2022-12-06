@@ -114,11 +114,6 @@ public class Player : MonoBehaviour
         if (context.canceled)
         {
             ChangeState(context);
-            foreach (PiggyAIController piggy in piggies)
-            {
-                if (piggy.isFound == true)
-                    piggy.ChangeState("MoveCancel");
-            }
         }
     }
 

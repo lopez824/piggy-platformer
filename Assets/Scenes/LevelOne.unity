@@ -2013,6 +2013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piggy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1301302682828881232, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6296456603426100610, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4378,6 +4382,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 450217169293798622, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
+      propertyPath: movementSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1301302682828881232, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
       propertyPath: m_Name
       value: Piggy
@@ -6083,6 +6091,10 @@ PrefabInstance:
     - target: {fileID: 1301302682828881232, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
       propertyPath: m_Name
       value: Piggy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301302682828881232, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296456603426100610, guid: 7549852c34a375e43a571ad9b56c07e5, type: 3}
       propertyPath: m_RootOrder

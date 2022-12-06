@@ -11,7 +11,7 @@ public class PiggyFollow : PiggyState
 
     public override void enter()
     {
-        //Debug.Log("Entered Follow State");
+        Debug.Log("Entered Follow State");
         piggyController.anim.SetTrigger("isWalking");
 
         // TODO: Implement Behavior Tree
@@ -21,7 +21,7 @@ public class PiggyFollow : PiggyState
     {
         switch (name)
         {
-            case "MoveCancel":
+            case "Idle":
                 return new PiggyIdle(piggyController);
             case "Jump":
                 return new PiggyJump(piggyController);
@@ -33,11 +33,13 @@ public class PiggyFollow : PiggyState
     public override void update()
     {
         piggyController.MoveTo(piggyController.player.transform.position);
+        if (piggyController.GetDistanceTo(piggyController.player.transform.position) < 3f)
+            piggyController.ChangeState("Idle");
     }
 
     public override void exit()
     {
-        //Debug.Log("Exited Follow State");
+        Debug.Log("Exited Follow State");
         piggyController.anim.ResetTrigger("isWalking");
     }
 }

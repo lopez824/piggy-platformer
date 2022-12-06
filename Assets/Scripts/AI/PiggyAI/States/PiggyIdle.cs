@@ -11,10 +11,7 @@ public class PiggyIdle : PiggyState
 
     public override void enter()
     {
-        if (piggyController.GetDistanceTo(piggyController.player.transform.position) > 3f)
-            piggyController.ChangeState("Move");
-
-        //Debug.Log("Entered Idle State");
+        Debug.Log("Entered Idle State");
         piggyController.anim.SetTrigger("isIdle");
 
         // TODO: Implement Behavior Tree
@@ -35,12 +32,13 @@ public class PiggyIdle : PiggyState
 
     public override void update()
     {
-        base.update();
+        if (piggyController.GetDistanceTo(piggyController.player.transform.position) > 3f)
+            piggyController.ChangeState("Move");
     }
 
     public override void exit()
     {
-        //Debug.Log("Exited Idle State");
+        Debug.Log("Exited Idle State");
         piggyController.anim.ResetTrigger("isIdle");
     }
 }
