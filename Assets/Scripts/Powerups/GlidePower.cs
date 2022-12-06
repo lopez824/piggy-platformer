@@ -7,6 +7,7 @@ public class GlidePower : PiggyPower
     public override void activate()
     {
         EnablePlayerGlide();
+        piggy.isFound = true;
     }
 
     private void OnTriggerEnter(Collider other)

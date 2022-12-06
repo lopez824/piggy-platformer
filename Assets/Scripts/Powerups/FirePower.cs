@@ -7,6 +7,7 @@ public class FirePower : PiggyPower
     public override void activate()
     {
         EnablePlayerFire();
+        piggy.isFound = true;
     }
 
     private void OnTriggerEnter(Collider other)

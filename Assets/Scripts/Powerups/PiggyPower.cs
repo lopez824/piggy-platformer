@@ -5,6 +5,7 @@ using UnityEngine;
 public class PiggyPower : MonoBehaviour
 {
     private Player player;
+    public PiggyAIController piggy;
     public Vector3 rotationSpeed = Vector3.zero;
 
     private void Awake()

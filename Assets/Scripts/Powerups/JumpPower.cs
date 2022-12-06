@@ -7,6 +7,7 @@ public class JumpPower : PiggyPower
     public override void activate()
     {
         EnablePlayerHighJump();
+        piggy.isFound = true;
     }
 
     private void OnTriggerEnter(Collider other)
