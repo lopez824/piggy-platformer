@@ -1,12 +1,15 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject wind;
     public List<ParticleSystem> windEffects;
+    public static Animator winPanelAnim;
 
     public delegate void OnGameStateChanged();
     public static OnGameStateChanged updateGameState;
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         sound = GetComponent<AudioSource>();
+        winPanelAnim = GameObject.FindGameObjectWithTag("Finish").GetComponent<Animator>();
         foreach (ParticleSystem wind in windEffects)
             StartCoroutine(startVFX(wind));
     }
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
     public static void GameWon()
     {
         Debug.Log("Win!");
+        winPanelAnim.Play("WinUI");
     }
 
     public static void LoadNextLevel()
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
         sound.Stop();
         sound.clip = AudioLibrary.library["piggytheme"];
         sound.volume = 0.1f;
+        sound.loop = true;
         sound.Play();
     }
 
@@ -56,6 +62,7 @@ public class GameManager : MonoBehaviour
         sound.Stop();
         sound.clip = AudioLibrary.library["Flow_2"];
         sound.volume = 0.75f;
+        sound.loop = true;
         sound.Play();
     }
 }

@@ -8,6 +8,7 @@ public class JumpPower : PiggyPower
     {
         EnablePlayerHighJump();
         piggy.isFound = true;
+        icon.color = activeColor;
         GameManager.PlayMainTheme();
     }
 

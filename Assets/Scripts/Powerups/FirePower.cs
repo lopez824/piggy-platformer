@@ -8,6 +8,7 @@ public class FirePower : PiggyPower
     {
         EnablePlayerFire();
         piggy.isFound = true;
+        icon.color = activeColor;
         GameManager.PlaySadTheme();
     }
 

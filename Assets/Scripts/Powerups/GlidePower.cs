@@ -8,6 +8,7 @@ public class GlidePower : PiggyPower
     {
         EnablePlayerGlide();
         piggy.isFound = true;
+        icon.color = activeColor;
     }
 
     private void OnTriggerEnter(Collider other)

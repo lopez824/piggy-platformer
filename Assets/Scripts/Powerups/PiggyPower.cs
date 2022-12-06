@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PiggyPower : MonoBehaviour
 {
     private Player player;
     public PiggyAIController piggy;
+    public Image icon;
+    public Color activeColor;
     public Vector3 rotationSpeed = Vector3.zero;
 
     private void Awake()
