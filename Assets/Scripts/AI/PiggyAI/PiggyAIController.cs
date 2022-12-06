@@ -16,6 +16,7 @@ public class PiggyAIController : MonoBehaviour
     public float movementSpeed = 3f;
     public float turnSpeed = 20f;
     public bool isGrounded = true;
+    public bool isFound = false;
 
     private void Awake()
     {
@@ -92,6 +93,7 @@ public class PiggyAIController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentState.update();
+        if (isFound == true)
+            currentState.update();
     }
 }

@@ -16,7 +16,7 @@ public class GlidePower : PiggyPower
             AudioSource playerSound = other.gameObject.GetComponent<AudioSource>();
             playerSound.PlayOneShot(AudioLibrary.library["grunt_1"]);
             activate();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

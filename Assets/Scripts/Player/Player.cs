@@ -106,7 +106,8 @@ public class Player : MonoBehaviour
             ChangeState(context);
             foreach(PiggyAIController piggy in piggies)
             {
-                piggy.ChangeState(context.action.name);
+                if (piggy.isFound == true)
+                    piggy.ChangeState(context.action.name);
             }
         }
             
@@ -115,7 +116,8 @@ public class Player : MonoBehaviour
             ChangeState(context);
             foreach (PiggyAIController piggy in piggies)
             {
-                piggy.ChangeState("MoveCancel");
+                if (piggy.isFound == true)
+                    piggy.ChangeState("MoveCancel");
             }
         }
     }
@@ -142,9 +144,12 @@ public class Player : MonoBehaviour
 
             foreach (PiggyAIController piggy in piggies)
             {
-                piggy.isGrounded = false;
-                piggy.ChangeState(context.action.name);
-                piggy.rb.AddForce(Vector2.up * jumpForce * 0.8f);
+                if (piggy.isFound == true)
+                {
+                    piggy.isGrounded = false;
+                    piggy.ChangeState(context.action.name);
+                    piggy.rb.AddForce(Vector2.up * jumpForce * 0.8f);
+                }
             }
         }   
         else if (context.canceled)

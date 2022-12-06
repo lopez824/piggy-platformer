@@ -18,6 +18,5 @@ public class BreathAttack : MonoBehaviour
                 GameManager.updateGameState();
             }
         }
-            
     }
 }
